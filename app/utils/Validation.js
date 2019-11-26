@@ -5,6 +5,6 @@ export default formValidations = {
     return /@/.test(value);
   }),
   password: t.refinement(t.String, value => {
-    return value.lenght >= 6;
+    return value.length >= 6;
   }),
 };

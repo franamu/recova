@@ -11,11 +11,25 @@ export default class Register extends Component {
     this.state = {
       registerStruct: RegisterStruct,
       registerOptions: RegisterOptions,
+      formData: {
+        name: '',
+        email: '',
+        password: '',
+        passwordConfirmation: ''
+      }
     };
   }
   register = () => {
     const validate = this.refs.registerForm.getValue();
+    console.log(this.state.formData);
   };
+
+  onChangeFormRegister = (formValue) => {
+    this.setState({
+      formData: formValue
+    })
+    console.log(this.state.formData);
+  }
 
   render() {
     const {registerStruct, registerOptions} = this.state;
@@ -25,6 +39,8 @@ export default class Register extends Component {
           ref="registerForm"
           type={registerStruct}
           options={registerOptions}
+          value={this.state.formData}
+          onChange={(formValue) => this.onChangeFormRegister(formValue)}
         />
         <Button title="Unirse" onPress={() => this.register()} />
       </View>
