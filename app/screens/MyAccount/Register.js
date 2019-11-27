@@ -20,7 +20,16 @@ export default class Register extends Component {
     };
   }
   register = () => {
-    const validate = this.refs.registerForm.getValue();
+    const {password, passwordConfirmation} = this.state.formData;
+
+    if (password === passwordConfirmation) {
+      const validate = this.refs.registerForm.getValue();
+      if (validate) {
+        
+      }
+    } else {
+      console.log('las contraseñas no son iguales');
+    }
     console.log(this.state.formData);
   };
 
