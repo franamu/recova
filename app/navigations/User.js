@@ -17,32 +17,10 @@ import SearchScreen from '../screens/Search';
 import MyAccountScreen from '../screens/MyAccount/MyAccount';
 import RegisterScreen from '../screens/MyAccount/Register';
 
-const homeScreenStack = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-    navigationOptions: ({navigation}) => ({
-      title: 'Home',
-    }),
-  },
-});
-
-const topFiveScreenStack = createStackNavigator({
-  TopFive: {
-    screen: TopFiveScreen,
-    navigationOptions: ({navigation}) => ({
-      title: 'TopFive',
-    }),
-  },
-});
-
-const searchScreenStack = createStackNavigator({
-  Search: {
-    screen: SearchScreen,
-    navigationOptions: ({navigation}) => ({
-      title: 'Search',
-    }),
-  },
-});
+//  Imports stacks Navigators
+import HomeScreenStack from './Home';
+import TopFiveScreenStack from './TopFive';
+import SearchScreenStack from './Search';
 
 const myAccountScreenStack = createStackNavigator({
   MyAccount: {
@@ -62,7 +40,7 @@ const myAccountScreenStack = createStackNavigator({
 const RootStack = createBottomTabNavigator(
   {
     Home: {
-      screen: homeScreenStack,
+      screen: HomeScreenStack,
       navigationOptions: ({navigation}) => ({
         tabBarLabel: 'Home',
         tabBarIcon: ({tintColor}) => (
@@ -76,7 +54,7 @@ const RootStack = createBottomTabNavigator(
       }),
     },
     TopFive: {
-      screen: topFiveScreenStack,
+      screen: TopFiveScreenStack,
       navigationOptions: ({navigation}) => ({
         tabBarLabel: 'Top 5',
         tabBarIcon: ({tintColor}) => (
@@ -90,7 +68,7 @@ const RootStack = createBottomTabNavigator(
       }),
     },
     Search: {
-      screen: searchScreenStack,
+      screen: SearchScreenStack,
       navigationOptions: ({navigation}) => ({
         tabBarLabel: 'Buscar',
         tabBarIcon: ({tintColor}) => (
