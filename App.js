@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 // rutas
-import UserNavigation from './app/navigations/User';
+import UserNavigation from './app/navigations/Navigation';
 
 class App extends Component {
   render() {

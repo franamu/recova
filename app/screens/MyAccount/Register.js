@@ -15,8 +15,8 @@ export default class Register extends Component {
         name: '',
         email: '',
         password: '',
-        passwordConfirmation: ''
-      }
+        passwordConfirmation: '',
+      },
     };
   }
   register = () => {
@@ -25,7 +25,6 @@ export default class Register extends Component {
     if (password === passwordConfirmation) {
       const validate = this.refs.registerForm.getValue();
       if (validate) {
-        
       }
     } else {
       console.log('las contraseñas no son iguales');
@@ -33,12 +32,12 @@ export default class Register extends Component {
     console.log(this.state.formData);
   };
 
-  onChangeFormRegister = (formValue) => {
+  onChangeFormRegister = formValue => {
     this.setState({
-      formData: formValue
-    })
+      formData: formValue,
+    });
     console.log(this.state.formData);
-  }
+  };
 
   render() {
     const {registerStruct, registerOptions} = this.state;
@@ -49,7 +48,7 @@ export default class Register extends Component {
           type={registerStruct}
           options={registerOptions}
           value={this.state.formData}
-          onChange={(formValue) => this.onChangeFormRegister(formValue)}
+          onChange={formValue => this.onChangeFormRegister(formValue)}
         />
         <Button title="Unirse" onPress={() => this.register()} />
       </View>

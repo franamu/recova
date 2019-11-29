@@ -6,7 +6,7 @@ export default (inputTemplate = locals => {
     return (
         <View style={styles.viewContainer}>
             <Input placeholder={locals.config.placeholder}
-            leftIcon={<Icon type={locals.config.iconType} name={locals.config.iconName} color='#b3b3b3' size={24}/>}
+            rightIcon={<Icon type={locals.config.iconType} name={locals.config.iconName} color='#b3b3b3' size={24}/>}
             password={locals.config.password}
             passwordConfirmation={locals.config.passwordConfirmation}/>
         </View>

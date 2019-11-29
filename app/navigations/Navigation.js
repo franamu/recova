@@ -21,23 +21,9 @@ import RegisterScreen from '../screens/MyAccount/Register';
 import HomeScreenStack from './Home';
 import TopFiveScreenStack from './TopFive';
 import SearchScreenStack from './Search';
+import MyAccountStack from './MyAccount';
 
-const myAccountScreenStack = createStackNavigator({
-  MyAccount: {
-    screen: MyAccountScreen,
-    navigationOptions: ({navigation}) => ({
-      title: 'My Account Screen',
-    }),
-  },
-  Register: {
-    screen: RegisterScreen,
-    navigationOptions: ({navigation}) => ({
-      title: 'Registro',
-    }),
-  },
-});
-
-const RootStack = createBottomTabNavigator(
+const NavigationStack = createBottomTabNavigator(
   {
     Home: {
       screen: HomeScreenStack,
@@ -82,7 +68,7 @@ const RootStack = createBottomTabNavigator(
       }),
     },
     MyAccount: {
-      screen: myAccountScreenStack,
+      screen: MyAccountStack,
       navigationOptions: ({navigation}) => ({
         tabBarLabel: 'Mi cuenta',
         tabBarIcon: ({tintColor}) => (
@@ -108,4 +94,4 @@ const RootStack = createBottomTabNavigator(
   },
 );
 
-export default createAppContainer(RootStack);
+export default createAppContainer(NavigationStack);
