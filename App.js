@@ -1,16 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 // rutas
 import UserNavigation from './app/navigations/Navigation';
+
+//firebase
+import {firebaseApp} from './app/utils/FireBase';
 
 class App extends Component {
   render() {
