@@ -5,23 +5,14 @@ import {Icon} from 'react-native-elements';
 // React Navigation
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack';
 import 'react-native-gesture-handler';
-
-// Local Imports
-import HomeScreen from '../screens/Home';
-import TopFiveScreen from '../screens/TopFive';
-import SearchScreen from '../screens/Search';
-
-// Screens my account
-import MyAccountScreen from '../screens/MyAccount/MyAccount';
-import RegisterScreen from '../screens/MyAccount/Register';
 
 //  Imports stacks Navigators
 import HomeScreenStack from './Home';
 import TopFiveScreenStack from './TopFive';
 import SearchScreenStack from './Search';
 import MyAccountStack from './MyAccount';
+import LoginScreen from '../screens/MyAccount/Login';
 
 const NavigationStack = createBottomTabNavigator(
   {
