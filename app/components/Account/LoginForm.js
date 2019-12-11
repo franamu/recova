@@ -4,16 +4,18 @@ import {Input, Icon, Button} from 'react-native-elements';
 
 export default function LoginForm() {
   const [hidePassword, sethidePassword] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const login = () => {
-    console.log('Usuario Logeado');
+    console.log('Mensaje: ', email);
   };
   return (
     <View style={styles.formContainer}>
       <Input
         placeholder="Correo electrónico"
         containerStyle={styles.InputForm}
-        onChange={() => console.log('Email Actualizado')}
+        onChange={(e) => setEmail(e.nativeEvent.text)}
         rightIcon={
           <Icon
             type="material-community"
@@ -27,7 +29,7 @@ export default function LoginForm() {
         containerStyle={styles.InputForm}
         password={true}
         secureTextEntry={hidePassword}
-        onChange={() => console.log('password Actualizado')}
+        onChange={(e) => setPassword(e.nativeEvent.text)}
         rightIcon={
           <Icon
             type="material-community"
