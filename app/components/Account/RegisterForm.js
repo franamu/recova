@@ -7,7 +7,7 @@ import Loading from '../Loading';
 import {withNavigation} from 'react-navigation';
 
 function RegisterForm(props) {
-  const {toastRef} = props;
+  const {toastRef, navigation} = props;
   // Estados
   const [hidePassword, setHidePassword] = useState(true);
   const [hideRepeatPaswword, setHideRepeatPassword] = useState(true);
@@ -41,7 +41,7 @@ function RegisterForm(props) {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        toastRef.current.show('Usuario creado correctamente');
+        navigation.navigate('MyAccount');
       })
       .catch(e => {
         toastRef.current.show('Error al crear la cuenta, intentelo más tarde');
