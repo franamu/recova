@@ -21,8 +21,8 @@ export default function Loading(props) {
 
 const styles = StyleSheet.create({
   overlay: {
-    height: 100,
-    width: 100,
+    height: 120,
+    width: 120,
     backgroundColor: '#fff',
     borderWidth: 2,
     borderRadius: 10,
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   },
   text: {
     textTransform: 'uppercase',
+    textAlign:'center',
     marginTop: 10,
   },
 });
