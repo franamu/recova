@@ -1,12 +1,24 @@
 import React, {useState} from 'react';
 import {LoginButton, AccessToken} from 'react-native-fbsdk';
 import {StyleSheet} from 'react-native';
-import {FacebookApi} from '../../utils/social';
+import {FacebookApi} from '../../utils/Social';
 import Loading from '../Loading';
+import * as firebase from 'firebase';
 
 export default function LoginFacebook() {
-  const login = () => {
-    console.log('click me');
+  const login = async data => {
+    const credentials = firebase.auth.FacebookAuthProvider.credential(
+      data.accessToken.toString(),
+    );
+    await firebase
+      .auth()
+      .signInWithCredential(credentials)
+      .then(() => {
+        console.log('Login correcto');
+      })
+      .catch(() => {
+        console.log('Error accediendo con facebook');
+      });
   };
   return (
     <LoginButton
@@ -17,9 +29,8 @@ export default function LoginFacebook() {
           console.log('login is cancelled.');
         } else {
           AccessToken.getCurrentAccessToken().then(data => {
-            console.log('result', result);
             console.log('data', data);
-            console.log(data.accessToken.toString());
+            login(data);
           });
         }
       }}
